@@ -1,0 +1,21 @@
+<!--{{ object_list }}-->
+{% if messages %}
+<ul class="messages">
+    {% for message in messages %}
+    <li {% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+    {% endfor %}
+</ul>
+{% endif %}
+<form method="GET" action="/practice/">
+<input type="text" name="q" placeholder="Search">
+</form>
+{% for object in object_list %}
+<li>
+     <a href="/practice/{{ object.id }}">{{ object.title }}</a>
+</li>
+{% endfor  %}
+
+{{ some_dict }}
+{{ num }}
+{{ array_list }}
+{{ boolean }}
